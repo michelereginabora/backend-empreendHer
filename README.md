@@ -4,9 +4,9 @@ A plataforma de empreededorismo EmpreendHer  tem o objetivo de estimular o empre
 
 O repositório completo com frontend e prototipação pode ser acessado [aqui](https://github.com/hackingrio/hacking-her2024-41)
 
-Site Map: Site Map: [![site map](https://images2.imgbox.com/b3/ca/fU9d3xip_o.png)](https://imgbox.com/fU9d3xip)
+Site Map: [![site map](https://images2.imgbox.com/b3/ca/fU9d3xip_o.png)](https://imgbox.com/fU9d3xip)
 
-
+</br> </br>
 
 ## Node.js, Express, TypeORM, MySQL e Injeção de Dependência
 
