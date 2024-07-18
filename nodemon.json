@@ -1,0 +1,10 @@
+{
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": true,
+  "execMap": {
+    "ts": "node -r tsconfig-paths/register --inspect --require ts-node/register"
+  },
+  "watch": ["src/"],
+  "ignore_watch" : [ "src/uploads"],
+  "ext": "js,json,ts"
+}

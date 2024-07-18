@@ -1,0 +1,51 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "format:check": "prettier --check src",
+    "format:write": "prettier --write src",
+    "lint:check": "eslint -c .eslintrc --ext .ts src",
+    "start": "DEBUG=api-ts-template* node dist/index.js",
+    "dev": "set DEBUG=api-ts-template* && nodemon src/index.ts",
+    "test": "NODE_ENV=test jest \"^.+test\\.ts$\" --runInBand --detectOpenHandles",
+    "windows:test": "set NODE_ENV=test jest \"^.+test\\.ts$\" --runInBand --detectOpenHandles",
+    "test:watch": "jest --watch \"^.+test\\.ts$\"",
+    "load:test": "cd load-test && ./run.sh",
+    "pact:publish": "npm run build && node dist/infrastructure/pact/publisher/Publisher.js",
+    "pact:verify": "jest \"^.+pactverify\\.ts$\"",
+    "pact:test": "jest \"^.+pacttest\\.ts$\"",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migrate": "typeorm-ts-node-commonjs migration:run -d src/infrastructure/database/mysql/AppDataSource.ts",
+    "revert": "typeorm-ts-node-commonjs migration:revert -d src/infrastructure/database/mysql/AppDataSource.ts"
+  },
+  "keywords": [],
+  "author": "Michele Regina Bora",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.14.10",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/swagger-ui-express": "^4.1.6",
+    "nodemon": "^3.1.4",
+    "swagger-ui-express": "^5.0.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typeorm": "^0.3.20"
+  }
+}
