@@ -8,6 +8,7 @@ import { ICreateService } from '../interface/service/ICreateService';
 import { ServiceType } from '@domain/service-type/entities/serviceType.entity';
 import { PaymentMethods } from '@domain/payment-methods/entities/paymentMethods.entity';
 import { Local } from '@domain/local/entities/local.entity';
+import { PublicationType } from '@domain/publication-type/entities/publicationType.entity';
 
 @injectable()
 export default class ServiceUseCase implements IServiceUseCase {
@@ -18,7 +19,7 @@ export default class ServiceUseCase implements IServiceUseCase {
   ) {}
 
   async create(service: ICreateService): Promise<IService> {
-    const { title, serviceType, description, deliveryTime, paymentMethods, local, price } = service;
+    const { title, serviceType, description, deliveryTime, paymentMethods, local, price, publicationType } = service;
 
   const newService = new Service();
   newService.title = title;
@@ -27,6 +28,7 @@ export default class ServiceUseCase implements IServiceUseCase {
   newService.deliveryTime = deliveryTime;
   newService.paymentMethods = paymentMethods as unknown as PaymentMethods;
   newService.local = local as unknown as Local;
+  newService.publicationType = publicationType as unknown as PublicationType;
 
   if (price !== undefined) {
     newService.price = price;

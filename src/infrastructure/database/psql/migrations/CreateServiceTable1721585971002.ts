@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from 'typeorm';
 
-export class CreateServiceTable1720978012145 implements MigrationInterface {
+export class CreateServiceTable1721585971002 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
@@ -8,10 +8,11 @@ export class CreateServiceTable1720978012145 implements MigrationInterface {
             columns: [
                 {
                     name: 'id',
-                    type: 'char',
-                    length: '36',
+                    type: 'uuid',
                     isPrimary: true,
                     isUnique: true,
+                    generationStrategy: 'uuid',
+                    default: 'uuid_generate_v4()',
                 },
                 {
                     name: 'title',
@@ -36,56 +37,67 @@ export class CreateServiceTable1720978012145 implements MigrationInterface {
                     isNullable: false,
                 },
                 {
-                    name: 'location',
-                    type: 'char',
-                    length: '36',
+                    name: 'local',
+                    type: 'uuid',
                     isNullable: true,
                 },
                 {
-                    name: 'serviceType',
-                    type: 'char',
-                    length: '36',
+                    name: 'service_type',
+                    type: 'uuid',
                     isNullable: false,
                 },
                 {
-                    name: 'paymentMethods',
-                    type: 'char',
-                    length: '36',
+                    name: 'payment_methods',
+                    type: 'uuid',
+                    isNullable: false,
+                },
+                {
+                    name: 'publication_type',
+                    type: 'uuid',
                     isNullable: false,
                 },
             ],
         }));
 
-        // Adicionar chaves estrangeiras
+        // Add foreign keys
         await queryRunner.createForeignKey('service', new TableForeignKey({
-            name: 'FK_service_location',
-            columnNames: ['location'],
+            name: 'id_service_local',
+            columnNames: ['local'],
             referencedColumnNames: ['id'],
-            referencedTableName: 'location',
+            referencedTableName: 'local',
             onDelete: 'CASCADE',
         }));
 
         await queryRunner.createForeignKey('service', new TableForeignKey({
-            name: 'FK_service_serviceType',
-            columnNames: ['serviceType'],
+            name: 'id_service_service_type',
+            columnNames: ['service_type'],
             referencedColumnNames: ['id'],
             referencedTableName: 'service_type',
             onDelete: 'CASCADE',
         }));
 
         await queryRunner.createForeignKey('service', new TableForeignKey({
-            name: 'FK_service_paymentMethods',
-            columnNames: ['paymentMethods'],
+            name: 'id_service_payment_methods',
+            columnNames: ['payment_methods'],
             referencedColumnNames: ['id'],
             referencedTableName: 'payment_methods',
+            onDelete: 'CASCADE',
+        }));
+
+        await queryRunner.createForeignKey('service', new TableForeignKey({
+            name: 'id_service_publication_type',
+            columnNames: ['publication_type'],
+            referencedColumnNames: ['id'],
+            referencedTableName: 'publication_type',
             onDelete: 'CASCADE',
         }));
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('service', 'FK_service_location');
-        await queryRunner.dropForeignKey('service', 'FK_service_serviceType');
-        await queryRunner.dropForeignKey('service', 'FK_service_paymentMethods');
+        await queryRunner.dropForeignKey('service', 'id_service_local');
+        await queryRunner.dropForeignKey('service', 'id_service_service_type');
+        await queryRunner.dropForeignKey('service', 'id_service_payment_methods');
+        await queryRunner.dropForeignKey('service', 'id_service_publication_type');
 
         await queryRunner.dropTable('service');
     }

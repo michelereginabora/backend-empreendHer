@@ -13,7 +13,7 @@ export class CreateServiceController
   implements IController {
   constructor(
     @inject(tokens.ServiceUseCase)
-    private publicationService: IServiceUseCase
+    private publicationUseCase: IServiceUseCase
   ) {
     super()
   }
@@ -21,7 +21,7 @@ export class CreateServiceController
   async handle(req: Request, res: Response): Promise<Response> {
     try {
       const reqNew = { ...req.body}
-      const service = await this.publicationService.create(reqNew)
+      const service = await this.publicationUseCase.create(reqNew)
       return this.success(res, 'Serviço criado.', service)
     } catch (err: any) {
       return this.error(res, err.message)

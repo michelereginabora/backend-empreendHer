@@ -8,5 +8,6 @@ export interface IService {
     deliveryTime: string;
     description: string;
     local?: string;
+    publicationType?: string;
   }
   

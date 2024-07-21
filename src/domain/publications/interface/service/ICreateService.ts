@@ -7,5 +7,6 @@ export interface ICreateService {
     deliveryTime: string;
     description: string;
     local?: string;
+    publicationType: string;
   }
   
