@@ -10,7 +10,7 @@ Site Map: [![site map](https://images2.imgbox.com/b3/ca/fU9d3xip_o.png)](https:/
 
 ## Node.js, Express, TypeORM, MySQL e Injeção de Dependência
 
-Este projeto implementa o backend para EmpreendHer utilizando Node.js para o ambiente de execução, Express como framework web, TypeORM para mapeamento objeto-relacional com MySQL como banco de dados e injeção de dependência para gerenciar componentes e serviços.
+Este projeto implementa o backend para EmpreendHer utilizando Node.js para o ambiente de execução, Express como framework web, TypeORM para mapeamento objeto-relacional com PostgreSQL como banco de dados e injeção de dependência para gerenciar componentes e serviços.
 
 ### Estrutura de Pastas
 
@@ -20,7 +20,7 @@ Este projeto implementa o backend para EmpreendHer utilizando Node.js para o amb
   - **entities**: Entidades de domínio, como Service, Job, Content e Promotion.
   - **interfaces**: Interfaces utilizadas para definições contratuais entre diferentes partes da aplicação.
   - **repositories**: Definições de repositórios que encapsulam operações de persistência.
-  - **services**: Lógica de negócio da aplicação, incluindo serviços para manipulação de dados.
+  - **use-cases**: Lógica de negócio da aplicação, incluindo serviços para manipulação de dados.
 
 - **infrastructure**: Implementações específicas para infraestrutura, como conexões com banco de dados e migrações.
   - **database/mysql/migrations**: Migrações do TypeORM para controle de versão do banco de dados.
@@ -38,7 +38,7 @@ Este projeto implementa o backend para EmpreendHer utilizando Node.js para o amb
 
 ### Banco de Dados
 
-- Instale MySQL (utilizado Xampp 8.2) e crie um banco de dados chamado `empreendher`.
+- Instale PostgreSQL 12.19 e crie um banco de dados chamado `empreendHer`.
 
 ### Criar e Rodar as Migrações
 
@@ -50,7 +50,7 @@ npm run migrate
 
 - Para criar novas migrations 
 ```
-npm run typeorm migration:create -n src/infrastructure/database/mysql/migrations/  
+npm run typeorm migration:create -n src/infrastructure/database/psql/migrations/  
 ```
 
 ### Testando a API
@@ -60,19 +60,19 @@ Você pode testar a API utilizando ferramentas como Insomnia ou Postman.
 
 #### Rota de Criação de Local - POST
 
-- **Endpoint**: `/location/post`
+- **Endpoint**: `/local/post`
 
 **Exemplo de JSON**:
 
 ```json
 {
-  "name": "Remoto",
+  "name": "São Paulo, SP",
 }
 ```
 
 ##### Rota de Listagem de Local - GET
 
-- **Endpoint**: `/location/list`
+- **Endpoint**: `/local/list`
 
 
 </br>
@@ -115,6 +115,26 @@ Você pode testar a API utilizando ferramentas como Insomnia ou Postman.
 - **Endpoint**: `/service-type/list`
 
 
+#### Rota de Criação de Tipos de Publicação - POST
+
+- **Endpoint**: `/publication-type/post`
+
+**Exemplo de JSON**:
+
+```json
+{
+  "name": "Serviço",
+}
+
+```
+</br>
+
+##### Rota de Listagem de Tipos de Publicação - GET
+
+- **Endpoint**: `/publication-type/list`
+
+</br>
+
 #### Rota de Criação de Publicação de Serviço - POST
 
 - **Endpoint**: `/publications/post`
@@ -129,7 +149,8 @@ Você pode testar a API utilizando ferramentas como Insomnia ou Postman.
   "description": "Descrição do serviço de teste.",
   "price": 100.50,
   "deliveryTime": "2 dias úteis",
-  "location": "coloque o id do location"
+  "local": "coloque o id do local",
+  "publicationType": "coloque o id do publication_type"
 }
 
 ```

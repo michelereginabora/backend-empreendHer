@@ -1,4 +1,4 @@
-import AppDataSource from '@infrastructure/database/mysql/AppDataSource'
+import AppDataSource from '@infrastructure/database/psql/AppDataSource'
 import { injectable } from 'tsyringe'
 import { Repository } from 'typeorm'
 import { Service } from '../entities/services.entity'
@@ -25,9 +25,10 @@ export default class ServiceRepository implements IServiceRepository {
   async list(): Promise<IService[]> {
     const services = await this.serviceRepository.find({
       relations: {
-        location: true,
+        local: true,
         paymentMethods: true,
-        serviceType: true
+        serviceType: true,
+        publicationType: true
       },
 
     });
