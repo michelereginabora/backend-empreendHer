@@ -8,7 +8,7 @@ Site Map: [![site map](https://images2.imgbox.com/b3/ca/fU9d3xip_o.png)](https:/
 
 </br> </br>
 
-## Node.js, Express, TypeORM, MySQL e Injeção de Dependência
+## Node.js, Express, TypeORM, PostgreSQL e Injeção de Dependência
 
 Este projeto implementa o backend para EmpreendHer utilizando Node.js para o ambiente de execução, Express como framework web, TypeORM para mapeamento objeto-relacional com PostgreSQL como banco de dados e injeção de dependência para gerenciar componentes e serviços.
 
