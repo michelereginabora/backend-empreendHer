@@ -27,7 +27,8 @@ export default class ServiceRepository implements IServiceRepository {
       relations: {
         local: true,
         paymentMethods: true,
-        serviceType: true
+        serviceType: true,
+        publicationType: true
       },
 
     });
