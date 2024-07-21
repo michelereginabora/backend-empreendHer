@@ -5,8 +5,8 @@ import { IService } from '../interface/service/IService';
 import IServiceUseCase from '../interface/service/IServiceUseCase';
 import { Service } from '../entities/services.entity';
 import { ICreateService } from '../interface/service/ICreateService';
-import { ServiceType } from '@domain/serviceType/entities/serviceType.entity';
-import { PaymentMethods } from '@domain/paymentMethods/entities/paymentMethods.entity';
+import { ServiceType } from '@domain/service-type/entities/serviceType.entity';
+import { PaymentMethods } from '@domain/payment-methods/entities/paymentMethods.entity';
 import { Local } from '@domain/local/entities/local.entity';
 
 @injectable()

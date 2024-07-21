@@ -3,7 +3,7 @@ import IController from '@shared/interfaces/IController'
 import { Request, Response } from 'express'
 import { inject, injectable } from 'tsyringe'
 import BaseController from '../BaseController'
-import IPaymentMethodsUseCase from '@domain/paymentMethods/interfaces/IPaymentMethodsUseCase'
+import IPaymentMethodsUseCase from '@domain/payment-methods/interfaces/IPaymentMethodsUseCase'
 
 @injectable()
 export class ListPaymentMethodsController extends BaseController implements IController {

@@ -3,13 +3,13 @@ import IController from '@shared/interfaces/IController';
 import { Request, Response } from 'express';
 import { inject, injectable } from 'tsyringe';
 import BaseController from '../BaseController';
-import IPaymentMethodsUseCase from '@domain/paymentMethods/interfaces/IPaymentMethodsUseCase';
+import IServiceTypeUseCase from '@domain/service-type/interfaces/IServiceTypeUseCase';
 
 @injectable()
-export class CreatePaymentMethodsController extends BaseController implements IController {
+export class CreateServiceTypeController extends BaseController implements IController {
   constructor(
-    @inject(tokens.PaymentMethodsUseCase)
-    private paymentMethodsUseCase: IPaymentMethodsUseCase
+    @inject(tokens.ServiceTypeUseCase)
+    private serviceTypeUseCase: IServiceTypeUseCase
   ) {
     super();
   }
@@ -23,13 +23,13 @@ export class CreatePaymentMethodsController extends BaseController implements IC
         return this.error(res, 'O campo "name" é obrigatório.');
       }
 
-      const newPaymentMethod = {
+      const newServiceType = {
         name: name, 
         description: description
       };
 
-      const paymentMethod = await this.paymentMethodsUseCase.create(newPaymentMethod);
-      return this.success(res, 'Método de pagamento criado.', paymentMethod);
+      const serviceType = await this.serviceTypeUseCase.create(newServiceType);
+      return this.success(res, 'Tipo de serviço criado.', serviceType);
     } catch (err: any) {
       return this.error(res, err.message);
     }

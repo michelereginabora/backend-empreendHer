@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Local } from '@domain/local/entities/local.entity';
-import { PaymentMethods } from '@domain/paymentMethods/entities/paymentMethods.entity';
-import { ServiceType } from '@domain/serviceType/entities/serviceType.entity';
+import { PaymentMethods } from '@domain/payment-methods/entities/paymentMethods.entity';
+import { ServiceType } from '@domain/service-type/entities/serviceType.entity';
 
 @Entity('service')
 export class Service {

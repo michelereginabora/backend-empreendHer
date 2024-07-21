@@ -3,7 +3,7 @@ import IController from '@shared/interfaces/IController'
 import { Request, Response } from 'express'
 import { inject, injectable } from 'tsyringe'
 import BaseController from '../BaseController'
-import IServiceTypeUseCase from '@domain/serviceType/interfaces/IServiceTypeUseCase'
+import IServiceTypeUseCase from '@domain/service-type/interfaces/IServiceTypeUseCase'
 
 @injectable()
 export class ListServiceTypeController extends BaseController implements IController {

@@ -13,7 +13,6 @@ export default {
   password: process.env.DB_CONFIG_PASSWORD,
   synchronize: false,
   dropSchema: false,
-  logging: true,
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   migrations: [
     __dirname + '/infrastructure/database/psql/migrations/*{.ts,.js}',
