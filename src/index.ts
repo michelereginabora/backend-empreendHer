@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 import { App } from '@presentation/http/App'
 import { container } from '@di/container'
-import { appDataSource } from '@infrastructure/database/mysql/AppDataSource'
+import { appDataSource } from '@infrastructure/database/psql/AppDataSource'
 
 const app = container.resolve(App)
 

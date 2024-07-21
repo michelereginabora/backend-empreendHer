@@ -38,6 +38,6 @@ export const tokens = {
   CreateServiceController: Symbol('CreateServiceController'),
   PublicationsRoutes: Symbol('PublicationsRoutes'),
   ServiceRepository: Symbol('ServiceRepository'),
-  ServiceServices: Symbol('ServiceServices'),
+  ServiceUseCase: Symbol('ServiceUseCase'),
   ListServicesController: Symbol('ListServicesController'),
 }

@@ -2,7 +2,7 @@ import { tokens } from '@di/tokens';
 import { inject, injectable } from 'tsyringe';
 import IServiceRepository from '../interface/service/IServiceRepository';
 import { IService } from '../interface/service/IService';
-import IServiceService from '../interface/service/IServiceServices';
+import IServiceUseCase from '../interface/service/IServiceUseCase';
 import { Service } from '../entities/services.entity';
 import { ICreateService } from '../interface/service/ICreateService';
 import { ServiceType } from '@domain/serviceType/entities/serviceType.entity';
@@ -10,7 +10,7 @@ import { PaymentMethods } from '@domain/paymentMethods/entities/paymentMethods.e
 import { Location } from '@domain/location/entities/location.entity';
 
 @injectable()
-export default class ServiceServices implements IServiceService {
+export default class ServiceUseCase implements IServiceUseCase {
   constructor(
     @inject(tokens.ServiceRepository)
     private serviceRepository: IServiceRepository

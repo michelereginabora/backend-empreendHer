@@ -8,7 +8,7 @@ import { DocsService } from '@infrastructure/docs/DocsService'
 import { CreateServiceController } from '@presentation/http/controllers/publications/services/CreateServiceController'
 import { PublicationsRoutes } from '@presentation/http/routes/PublicationsRoutes'
 import ServiceRepository from '@domain/publications/repositories/ServiceRepository'
-import ServiceServices from '@domain/publications/services/ServiceServices'
+import ServiceUseCase from '@domain/publications/use-cases/ServiceUseCase'
 import LocationRepository from '@domain/location/repositories/LocationRepository'
 import LocationService from '@domain/location/services/LocationService'
 import { LocationCreateController } from '@presentation/http/controllers/location/CreateLocationController'
@@ -65,7 +65,7 @@ childContainer.registerSingleton(tokens.ServiceTypeRoutes, ServiceTypeRoutes)
 childContainer.registerSingleton(tokens.CreateServiceController, CreateServiceController)
 childContainer.registerSingleton(tokens.PublicationsRoutes, PublicationsRoutes)
 childContainer.registerSingleton(tokens.ServiceRepository, ServiceRepository)
-childContainer.registerSingleton(tokens.ServiceServices, ServiceServices)
+childContainer.registerSingleton(tokens.ServiceUseCase, ServiceUseCase)
 childContainer.registerSingleton(tokens.ListServicesController, ListServicesController)
 
 

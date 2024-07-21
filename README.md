@@ -10,7 +10,7 @@ Site Map: Site Map: [![site map](https://images2.imgbox.com/b3/ca/fU9d3xip_o.png
 
 ## Node.js, Express, TypeORM, MySQL e Injeção de Dependência
 
-Este projeto implementa o backend para EmpreendHer utilizando Node.js para o ambiente de execução, Express como framework web, TypeORM para mapeamento objeto-relacional com MySQL como banco de dados e injeção de dependência para gerenciar componentes e serviços.
+Este projeto implementa o backend para EmpreendHer utilizando Node.js para o ambiente de execução, Express como framework web, TypeORM para mapeamento objeto-relacional com PostgreSQL como banco de dados e injeção de dependência para gerenciar componentes e serviços.
 
 ### Estrutura de Pastas
 
@@ -20,7 +20,7 @@ Este projeto implementa o backend para EmpreendHer utilizando Node.js para o amb
   - **entities**: Entidades de domínio, como Service, Job, Content e Promotion.
   - **interfaces**: Interfaces utilizadas para definições contratuais entre diferentes partes da aplicação.
   - **repositories**: Definições de repositórios que encapsulam operações de persistência.
-  - **services**: Lógica de negócio da aplicação, incluindo serviços para manipulação de dados.
+  - **use-cases**: Lógica de negócio da aplicação, incluindo serviços para manipulação de dados.
 
 - **infrastructure**: Implementações específicas para infraestrutura, como conexões com banco de dados e migrações.
   - **database/mysql/migrations**: Migrações do TypeORM para controle de versão do banco de dados.
@@ -38,7 +38,7 @@ Este projeto implementa o backend para EmpreendHer utilizando Node.js para o amb
 
 ### Banco de Dados
 
-- Instale MySQL (utilizado Xampp 8.2) e crie um banco de dados chamado `empreendher`.
+- Instale PostgreSQL 12.19 e crie um banco de dados chamado `empreendHer`.
 
 ### Criar e Rodar as Migrações
 
@@ -50,7 +50,7 @@ npm run migrate
 
 - Para criar novas migrations 
 ```
-npm run typeorm migration:create -n src/infrastructure/database/mysql/migrations/  
+npm run typeorm migration:create -n src/infrastructure/database/psql/migrations/  
 ```
 
 ### Testando a API

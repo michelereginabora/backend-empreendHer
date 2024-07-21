@@ -1,4 +1,4 @@
-import AppDataSource from '@infrastructure/database/mysql/AppDataSource'
+import AppDataSource from '@infrastructure/database/psql/AppDataSource'
 import { injectable } from 'tsyringe'
 import { Repository } from 'typeorm'
 import ILocationRepository from '../interfaces/ILocationRepository'

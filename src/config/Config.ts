@@ -28,7 +28,7 @@ export interface Configuration {
     enabled: boolean
   }
 
-  mysqlDB: {
+  psqlDB: {
     database: string
     username: string
     password: string
@@ -85,7 +85,7 @@ export class Config {
 
       port: Number(process.env.PORT) || 80,
 
-      mysqlDB: {
+      psqlDB: {
         database: process.env.MONGO_DB_DATABASE || '',
         username: process.env.DB_CONFIG_USERNAME || '',
         password: process.env.DB_CONFIG_PASSWORD || '',

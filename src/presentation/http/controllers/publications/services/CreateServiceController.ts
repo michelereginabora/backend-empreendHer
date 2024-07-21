@@ -3,7 +3,7 @@ import IController from '@shared/interfaces/IController'
 import { Request, Response } from 'express'
 import { inject, injectable } from 'tsyringe'
 import BaseController from '../../BaseController'
-import IServiceService from '@domain/publications/interface/service/IServiceServices'
+import IServiceUseCase from '@domain/publications/interface/service/IServiceUseCase'
 
 
 
@@ -12,8 +12,8 @@ export class CreateServiceController
   extends BaseController
   implements IController {
   constructor(
-    @inject(tokens.ServiceServices)
-    private publicationService: IServiceService
+    @inject(tokens.ServiceUseCase)
+    private publicationService: IServiceUseCase
   ) {
     super()
   }
