@@ -3,13 +3,13 @@ import IController from '@shared/interfaces/IController';
 import { Request, Response } from 'express';
 import { inject, injectable } from 'tsyringe';
 import BaseController from '../BaseController';
-import IServiceTypeService from '@domain/serviceType/interfaces/IServiceTypeService';
+import IServiceTypeUseCase from '@domain/serviceType/interfaces/IServiceTypeUseCase';
 
 @injectable()
 export class CreateServiceTypeController extends BaseController implements IController {
   constructor(
-    @inject(tokens.ServiceTypeService)
-    private serviceTypeService: IServiceTypeService
+    @inject(tokens.ServiceTypeUseCase)
+    private serviceTypeUseCase: IServiceTypeUseCase
   ) {
     super();
   }
@@ -28,7 +28,7 @@ export class CreateServiceTypeController extends BaseController implements ICont
         description: description
       };
 
-      const serviceType = await this.serviceTypeService.create(newServiceType);
+      const serviceType = await this.serviceTypeUseCase.create(newServiceType);
       return this.success(res, 'Tipo de serviço criado.', serviceType);
     } catch (err: any) {
       return this.error(res, err.message);

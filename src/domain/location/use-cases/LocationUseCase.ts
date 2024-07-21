@@ -1,6 +1,6 @@
 import { tokens } from '@di/tokens'
 import { inject, injectable } from 'tsyringe'
-import ILocationService from '../interfaces/ILocationService';
+import ILocationUseCase from '../interfaces/ILocationUseCase';
 import ILocationRepository from '../interfaces/ILocationRepository';
 import { ILocation } from '../interfaces/ILocation';
 import { Location } from '../entities/location.entity';
@@ -8,7 +8,7 @@ import { Location } from '../entities/location.entity';
 
 
 @injectable()
-export default class LocationService implements ILocationService {
+export default class LocationUseCase implements ILocationUseCase {
   constructor(
     @inject(tokens.LocationRepository)
     private locationRepository: ILocationRepository

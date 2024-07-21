@@ -1,6 +1,6 @@
 import { tokens } from '@di/tokens'
 import { inject, injectable } from 'tsyringe'
-import IPaymentMethodsService from '../interfaces/IPaymentMethodsService'
+import IPaymentMethodsUseCase from '../interfaces/IPaymentMethodsUseCase'
 import IPaymentMethodsRepository from '../interfaces/IPaymentMethodsRepository'
 import { IPaymentMethods } from '../interfaces/IPaymentMethods'
 import { PaymentMethods } from '../entities/paymentMethods.entity'
@@ -8,7 +8,7 @@ import { PaymentMethods } from '../entities/paymentMethods.entity'
 
 
 @injectable()
-export default class PaymentMethodsService implements IPaymentMethodsService {
+export default class PaymentMethodsUseCase implements IPaymentMethodsUseCase {
   constructor(
     @inject(tokens.PaymentMethodsRepository)
     private paymentMethodsRepository: IPaymentMethodsRepository

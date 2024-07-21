@@ -1,13 +1,13 @@
 import { tokens } from '@di/tokens'
 import { inject, injectable } from 'tsyringe'
-import IServiceTypeService from '../interfaces/IServiceTypeService'
+import IServiceTypeUseCase from '../interfaces/IServiceTypeUseCase'
 import IServiceTypeRepository from '../interfaces/IServiceTypeRepository'
 import { IServiceType } from '../interfaces/IServiceType'
 import { ServiceType } from '../entities/serviceType.entity'
 
 
 @injectable()
-export default class ServiceTypeService implements IServiceTypeService {
+export default class ServiceTypeUseCase implements IServiceTypeUseCase {
   constructor(
     @inject(tokens.ServiceTypeRepository)
     private serviceTypeRepository: IServiceTypeRepository

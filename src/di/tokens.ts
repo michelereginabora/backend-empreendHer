@@ -15,21 +15,21 @@ export const tokens = {
 
   // Location
   LocationRepository: Symbol('LocationRepository'),
-  LocationService: Symbol('LocationService'),
+  LocationUseCase: Symbol('LocationUseCase'),
   LocationCreateController: Symbol('LocationCreateController'),
   ListLocationController: Symbol('ListLocationController'),
   LocationRoutes: Symbol('LocationRoutes'),
 
   // PaymentMethods
   PaymentMethodsRepository: Symbol('PaymentMethodsRepository'),
-  PaymentMethodsService: Symbol('PaymentMethodsService'),
+  PaymentMethodsUseCase: Symbol('PaymentMethodsUseCase'),
   CreatePaymentMethodsController: Symbol('CreatePaymentMethodsController'),
   ListPaymentMethodsController: Symbol('ListPaymentMethodsController'),
   PaymentMethodsRoutes: Symbol('PaymentMethodsRoutes'),
   
   // Service Type
   ServiceTypeRepository: Symbol('ServiceTypeRepository'),
-  ServiceTypeService: Symbol('ServiceTypeService'),
+  ServiceTypeUseCase: Symbol('ServiceTypeUseCase'),
   CreateServiceTypeController: Symbol('CreateServiceTypeController'),
   ListServiceTypeController: Symbol('ListServiceTypeController'),
   ServiceTypeRoutes: Symbol('ServiceTypeRoutes'),

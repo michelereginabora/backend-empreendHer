@@ -3,13 +3,13 @@ import IController from '@shared/interfaces/IController';
 import { Request, Response } from 'express';
 import { inject, injectable } from 'tsyringe';
 import BaseController from '../BaseController';
-import IPaymentMethodsService from '@domain/paymentMethods/interfaces/IPaymentMethodsService';
+import IPaymentMethodsUseCase from '@domain/paymentMethods/interfaces/IPaymentMethodsUseCase';
 
 @injectable()
 export class CreatePaymentMethodsController extends BaseController implements IController {
   constructor(
-    @inject(tokens.PaymentMethodsService)
-    private paymentMethodService: IPaymentMethodsService
+    @inject(tokens.PaymentMethodsUseCase)
+    private paymentMethodsUseCase: IPaymentMethodsUseCase
   ) {
     super();
   }
@@ -28,7 +28,7 @@ export class CreatePaymentMethodsController extends BaseController implements IC
         description: description
       };
 
-      const paymentMethod = await this.paymentMethodService.create(newPaymentMethod);
+      const paymentMethod = await this.paymentMethodsUseCase.create(newPaymentMethod);
       return this.success(res, 'Método de pagamento criado.', paymentMethod);
     } catch (err: any) {
       return this.error(res, err.message);

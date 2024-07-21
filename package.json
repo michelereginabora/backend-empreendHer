@@ -18,8 +18,8 @@
     "pact:verify": "jest \"^.+pactverify\\.ts$\"",
     "pact:test": "jest \"^.+pacttest\\.ts$\"",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migrate": "typeorm-ts-node-commonjs migration:run -d src/infrastructure/database/mysql/AppDataSource.ts",
-    "revert": "typeorm-ts-node-commonjs migration:revert -d src/infrastructure/database/mysql/AppDataSource.ts"
+    "migrate": "typeorm-ts-node-commonjs migration:run -d src/infrastructure/database/psql/AppDataSource.ts",
+    "revert": "typeorm-ts-node-commonjs migration:revert -d src/infrastructure/database/psql/AppDataSource.ts"
   },
   "keywords": [],
   "author": "Michele Regina Bora",
