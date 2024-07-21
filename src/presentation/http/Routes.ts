@@ -25,7 +25,10 @@ export class Routes {
     private PaymentMethodsRoutes: IBaseRoute,
 
     @inject(tokens.ServiceTypeRoutes)
-    private ServiceTypeRoutes: IBaseRoute
+    private ServiceTypeRoutes: IBaseRoute,
+
+    @inject(tokens.PublicationTypeRoutes)
+    private PublicationTypeRoutes: IBaseRoute
   ) {}
 
   /**
@@ -47,6 +50,8 @@ export class Routes {
     router.use('/payment-methods', this.PaymentMethodsRoutes.setup())
 
     router.use('/service-type', this.ServiceTypeRoutes.setup())
+
+    router.use('/publication-type', this.PublicationTypeRoutes.setup())
 
     return router
   }

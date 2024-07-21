@@ -89,7 +89,7 @@ export class Config {
         database: process.env.MONGO_DB_DATABASE || '',
         username: process.env.DB_CONFIG_USERNAME || '',
         password: process.env.DB_CONFIG_PASSWORD || '',
-        port: Number(process.env.DB_CONFIG_PORT) || 3306,
+        port: Number(process.env.DB_CONFIG_PORT) || 5432,
       },
 
       pact: {

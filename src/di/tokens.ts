@@ -33,6 +33,13 @@ export const tokens = {
   CreateServiceTypeController: Symbol('CreateServiceTypeController'),
   ListServiceTypeController: Symbol('ListServiceTypeController'),
   ServiceTypeRoutes: Symbol('ServiceTypeRoutes'),
+
+  // Publication Type
+  PublicationTypeRepository: Symbol('PublicationTypeRepository'),
+  PublicationTypeUseCase: Symbol('PublicationTypeUseCase'),
+  CreatePublicationTypeController: Symbol('CreatePublicationTypeController'),
+  ListPublicationTypeController: Symbol('ListPublicationTypeController'),
+  PublicationTypeRoutes: Symbol('PublicationTypeRoutes'),
   
   // Publications/Services
   CreateServiceController: Symbol('CreateServiceController'),

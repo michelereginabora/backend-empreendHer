@@ -25,6 +25,11 @@ import { ListLocationController } from '@presentation/http/controllers/location/
 import { ListPaymentMethodsController } from '@presentation/http/controllers/paymentMethods/ListPaymentMethodsController'
 import { ListServiceTypeController } from '@presentation/http/controllers/serviceType/ListServiceTypeController'
 import { ListServicesController } from '@presentation/http/controllers/publications/services/ListServicesController'
+import PublicationTypeRepository from '@domain/publication-type/repositories/PublicationTypeRepository'
+import PublicationTypeUseCase from '@domain/publication-type/use-cases/PublicationTypeUseCase'
+import { CreatePublicationTypeController } from '@presentation/http/controllers/publication-type/CreatePublicationTypeController'
+import { ListPublicationTypeController } from '@presentation/http/controllers/publication-type/ListPublicationTypeController'
+import { PublicationTypeRoutes } from '@presentation/http/routes/PublicationTypeRoutes'
 
 // Location
 
@@ -60,6 +65,13 @@ childContainer.registerSingleton(tokens.ServiceTypeUseCase, ServiceTypeUseCase)
 childContainer.registerSingleton(tokens.CreateServiceTypeController, CreateServiceTypeController)
 childContainer.registerSingleton(tokens.ListServiceTypeController, ListServiceTypeController)
 childContainer.registerSingleton(tokens.ServiceTypeRoutes, ServiceTypeRoutes)
+
+// Publication Type
+childContainer.register(tokens.PublicationTypeRepository, PublicationTypeRepository)
+childContainer.register(tokens.PublicationTypeUseCase, PublicationTypeUseCase)
+childContainer.register(tokens.CreatePublicationTypeController, CreatePublicationTypeController)
+childContainer.register(tokens.ListPublicationTypeController, ListPublicationTypeController)
+childContainer.register(tokens.PublicationTypeRoutes, PublicationTypeRoutes)
 
 // Publications/Services
 childContainer.registerSingleton(tokens.CreateServiceController, CreateServiceController)
