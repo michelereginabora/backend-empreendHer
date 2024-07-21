@@ -60,19 +60,19 @@ Você pode testar a API utilizando ferramentas como Insomnia ou Postman.
 
 #### Rota de Criação de Local - POST
 
-- **Endpoint**: `/location/post`
+- **Endpoint**: `/local/post`
 
 **Exemplo de JSON**:
 
 ```json
 {
-  "name": "Remoto",
+  "name": "São Paulo, SP",
 }
 ```
 
 ##### Rota de Listagem de Local - GET
 
-- **Endpoint**: `/location/list`
+- **Endpoint**: `/local/list`
 
 
 </br>
@@ -115,6 +115,26 @@ Você pode testar a API utilizando ferramentas como Insomnia ou Postman.
 - **Endpoint**: `/service-type/list`
 
 
+#### Rota de Criação de Tipos de Publicação - POST
+
+- **Endpoint**: `/publication-type/post`
+
+**Exemplo de JSON**:
+
+```json
+{
+  "name": "Serviço",
+}
+
+```
+</br>
+
+##### Rota de Listagem de Tipos de Publicação - GET
+
+- **Endpoint**: `/publication-type/list`
+
+</br>
+
 #### Rota de Criação de Publicação de Serviço - POST
 
 - **Endpoint**: `/publications/post`
@@ -129,7 +149,8 @@ Você pode testar a API utilizando ferramentas como Insomnia ou Postman.
   "description": "Descrição do serviço de teste.",
   "price": 100.50,
   "deliveryTime": "2 dias úteis",
-  "location": "coloque o id do location"
+  "local": "coloque o id do local",
+  "publicationType": "coloque o id do publication_type"
 }
 
 ```
