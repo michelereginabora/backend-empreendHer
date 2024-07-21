@@ -13,12 +13,12 @@ export const tokens = {
   DocsController: Symbol('DocsController'),
   StatusService: Symbol('StatusService'),
 
-  // Location
-  LocationRepository: Symbol('LocationRepository'),
-  LocationUseCase: Symbol('LocationUseCase'),
-  LocationCreateController: Symbol('LocationCreateController'),
-  ListLocationController: Symbol('ListLocationController'),
-  LocationRoutes: Symbol('LocationRoutes'),
+  // Local
+  LocalRepository: Symbol('LocalRepository'),
+  LocalUseCase: Symbol('LocalUseCase'),
+  LocalCreateController: Symbol('LocalCreateController'),
+  ListLocalController: Symbol('ListLocalController'),
+  LocalRoutes: Symbol('LocalRoutes'),
 
   // PaymentMethods
   PaymentMethodsRepository: Symbol('PaymentMethodsRepository'),

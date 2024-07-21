@@ -25,7 +25,7 @@ export default class ServiceRepository implements IServiceRepository {
   async list(): Promise<IService[]> {
     const services = await this.serviceRepository.find({
       relations: {
-        location: true,
+        local: true,
         paymentMethods: true,
         serviceType: true
       },

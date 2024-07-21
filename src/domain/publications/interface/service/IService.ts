@@ -7,6 +7,6 @@ export interface IService {
     price: number;
     deliveryTime: string;
     description: string;
-    location?: string;
+    local?: string;
   }
   

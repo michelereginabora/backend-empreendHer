@@ -5,24 +5,24 @@ import { tokens } from '@di/tokens'
 import IController from '@shared/interfaces/IController'
 
 @injectable()
-export class LocationRoutes implements IBaseRoute {
+export class LocalRoutes implements IBaseRoute {
   constructor(
-    @inject(tokens.LocationCreateController)
-    private LocationCreateController: IController,
+    @inject(tokens.LocalCreateController)
+    private LocalCreateController: IController,
 
-    @inject(tokens.ListLocationController)
-    private ListLocationController: IController
+    @inject(tokens.ListLocalController)
+    private ListLocalController: IController
   ) {}
 
   setup() {
     const router = Router()
 
     router.post('/post', async (req: Request, res: Response) => {
-      return await this.LocationCreateController.handle(req, res)
+      return await this.LocalCreateController.handle(req, res)
     })
 
     router.get('/list', async (req: Request, res: Response) => {
-      return await this.ListLocationController.handle(req, res)
+      return await this.ListLocalController.handle(req, res)
     })
 
     return router

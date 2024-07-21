@@ -2,14 +2,14 @@
 import { Service } from '@domain/publications/entities/services.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
-@Entity('location')
-export class Location {
+@Entity('local')
+export class Local {
   @PrimaryGeneratedColumn('uuid')
   id!: string
 
   @Column()
   name!: string;
 
-  @OneToMany(() => Service, (service) => service.location)
+  @OneToMany(() => Service, (service) => service.local)
   service!: Service;
 }

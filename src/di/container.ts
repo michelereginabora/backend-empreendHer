@@ -9,10 +9,11 @@ import { CreateServiceController } from '@presentation/http/controllers/publicat
 import { PublicationsRoutes } from '@presentation/http/routes/PublicationsRoutes'
 import ServiceRepository from '@domain/publications/repositories/ServiceRepository'
 import ServiceUseCase from '@domain/publications/use-cases/ServiceUseCase'
-import LocationRepository from '@domain/location/repositories/LocationRepository'
-import LocationUseCase from '@domain/location/use-cases/LocationUseCase'
-import { LocationCreateController } from '@presentation/http/controllers/location/CreateLocationController'
-import { LocationRoutes } from '@presentation/http/routes/LocationRoutes'
+import LocalRepository from '@domain/local/repositories/LocalRepository'
+import LocalUseCase from '@domain/local/use-cases/LocationUseCase'
+import { LocalCreateController } from '@presentation/http/controllers/local/CreateLocalController'
+import { ListLocalController } from '@presentation/http/controllers/local/ListLocalController'
+import { LocalRoutes } from '@presentation/http/routes/LocalRoutes'
 import PaymentMethodsRepository from '@domain/paymentMethods/repositories/PaymentMethodsRepository'
 import PaymentMethodsUseCase from '@domain/paymentMethods/use-cases/PaymentMethodsUseCase'
 import { CreatePaymentMethodsController } from '@presentation/http/controllers/paymentMethods/CreatePaymentMethodsController'
@@ -21,7 +22,6 @@ import ServiceTypeRepository from '@domain/serviceType/repositories/ServiceTypeR
 import ServiceTypeUseCase from '@domain/serviceType/use-cases/ServiceTypeUseCase'
 import { CreateServiceTypeController } from '@presentation/http/controllers/serviceType/CreateServiceTypeController'
 import { ServiceTypeRoutes } from '@presentation/http/routes/ServiceTypeRoutes'
-import { ListLocationController } from '@presentation/http/controllers/location/ListLocationController'
 import { ListPaymentMethodsController } from '@presentation/http/controllers/paymentMethods/ListPaymentMethodsController'
 import { ListServiceTypeController } from '@presentation/http/controllers/serviceType/ListServiceTypeController'
 import { ListServicesController } from '@presentation/http/controllers/publications/services/ListServicesController'
@@ -31,7 +31,7 @@ import { CreatePublicationTypeController } from '@presentation/http/controllers/
 import { ListPublicationTypeController } from '@presentation/http/controllers/publication-type/ListPublicationTypeController'
 import { PublicationTypeRoutes } from '@presentation/http/routes/PublicationTypeRoutes'
 
-// Location
+// Local
 
 
 // Creates a new child container based on root container
@@ -45,12 +45,12 @@ childContainer.registerSingleton(tokens.Routes, Routes)
 childContainer.registerSingleton(tokens.DocsController, DocsController)
 childContainer.registerSingleton(tokens.DocsService, DocsService)
 
-//Location
-childContainer.registerSingleton(tokens.LocationRepository, LocationRepository)
-childContainer.registerSingleton(tokens.LocationUseCase, LocationUseCase)
-childContainer.registerSingleton(tokens.LocationCreateController, LocationCreateController)
-childContainer.registerSingleton(tokens.LocationRoutes, LocationRoutes)
-childContainer.registerSingleton(tokens.ListLocationController, ListLocationController)
+//Local
+childContainer.registerSingleton(tokens.LocalRepository, LocalRepository)
+childContainer.registerSingleton(tokens.LocalUseCase, LocalUseCase)
+childContainer.registerSingleton(tokens.LocalCreateController, LocalCreateController)
+childContainer.registerSingleton(tokens.LocalRoutes, LocalRoutes)
+childContainer.registerSingleton(tokens.ListLocalController, ListLocalController)
 
 // Payment Methods
 childContainer.registerSingleton(tokens.PaymentMethodsRepository, PaymentMethodsRepository)

@@ -3,13 +3,13 @@ import IController from '@shared/interfaces/IController';
 import { Request, Response } from 'express';
 import { inject, injectable } from 'tsyringe';
 import BaseController from '../BaseController';
-import ILocationUseCase from '@domain/location/interfaces/ILocationUseCase';
+import ILocalUseCase from '@domain/local/interfaces/ILocalUseCase';
 
 @injectable()
-export class LocationCreateController extends BaseController implements IController {
+export class LocalCreateController extends BaseController implements IController {
   constructor(
-    @inject(tokens.LocationUseCase)
-    private locationUseCase: ILocationUseCase
+    @inject(tokens.LocalUseCase)
+    private localUseCase: ILocalUseCase
   ) {
     super();
   }
@@ -22,12 +22,12 @@ export class LocationCreateController extends BaseController implements IControl
         return this.error(res, 'O campo "name" é obrigatório.');
       }
 
-      const newLocation = {
+      const newLocal = {
         name: name, 
       };
 
-      const location = await this.locationUseCase.create(newLocation);
-      return this.success(res, 'Local criado.', location);
+      const local = await this.localUseCase.create(newLocal);
+      return this.success(res, 'Local criado.', local);
     } catch (err: any) {
       return this.error(res, err.message);
     }

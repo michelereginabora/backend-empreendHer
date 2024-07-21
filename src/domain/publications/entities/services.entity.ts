@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Location } from '@domain/location/entities/location.entity';
+import { Local } from '@domain/local/entities/local.entity';
 import { PaymentMethods } from '@domain/paymentMethods/entities/paymentMethods.entity';
 import { ServiceType } from '@domain/serviceType/entities/serviceType.entity';
 
@@ -28,7 +28,7 @@ export class Service {
   @JoinColumn({ name: 'paymentMethods' })
   paymentMethods!: PaymentMethods;
 
-  @ManyToOne(() => Location, { nullable: true })
-  @JoinColumn({ name: 'location' })
-  location?: Location;
+  @ManyToOne(() => Local, { nullable: true })
+  @JoinColumn({ name: 'local' })
+  local?: Local;
 }

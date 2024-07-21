@@ -3,21 +3,21 @@ import IController from '@shared/interfaces/IController'
 import { Request, Response } from 'express'
 import { inject, injectable } from 'tsyringe'
 import BaseController from '../BaseController'
-import ILocationUseCase from '@domain/location/interfaces/ILocationUseCase'
+import ILocalUseCase from '@domain/local/interfaces/ILocalUseCase'
 
 @injectable()
-export class ListLocationController extends BaseController implements IController {
+export class ListLocalController extends BaseController implements IController {
   constructor(
-    @inject(tokens.LocationUseCase)
-    private locationUseCase: ILocationUseCase
+    @inject(tokens.LocalUseCase)
+    private localUseCase: ILocalUseCase
   ) {
     super()
   }
 
   async handle(_req: Request, res: Response): Promise<Response> {
     try {
-      const location = await this.locationUseCase.list()
-      return this.success(res, 'Lista de locais', location)
+      const local = await this.localUseCase.list()
+      return this.success(res, 'Lista de locais', local)
     } catch (err: any) {
       return this.error(res, err.message)
     }

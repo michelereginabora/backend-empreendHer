@@ -6,6 +6,6 @@ export interface ICreateService {
     price: number;
     deliveryTime: string;
     description: string;
-    location?: string;
+    local?: string;
   }
   
